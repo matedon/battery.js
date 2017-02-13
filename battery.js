@@ -42,7 +42,9 @@ var Battery = (function(self) {
   };
 
   function eventHandler(status) {
-    _status = status;
+    if (status instanceof BatteryManager) {
+      _status = status;
+    }
     _updateCallback(_status);
   }
 
